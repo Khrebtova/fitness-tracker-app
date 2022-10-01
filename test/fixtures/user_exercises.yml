@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  reps: 1
+  weight: 1
+  sets: 1
+  exercize_url: MyString
+  user: one
+  day: one
+
+two:
+  name: MyString
+  reps: 1
+  weight: 1
+  sets: 1
+  exercize_url: MyString
+  user: two
+  day: two
