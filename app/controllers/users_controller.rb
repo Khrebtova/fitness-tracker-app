@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
     # POST /signup
     def create
-        @user = User.create(user_params)
+        user = User.create(user_params)
         if user.valid?
-            session[:user_id] = @user.id
-            render json: @user, status: :created
+            # session[:user_id] = user.id
+            render json: user, status: :created
         else
             render json: {errors: user.errors.full_messages}, status: :unprocessable_entity
         end
@@ -18,6 +18,12 @@ class UsersController < ApplicationController
         else
             render json: {errors: ["Unauthorized"]}, status: :unauthorized
         end
+    end
+
+    # GET /users - for testing purposes only - DELETE
+    def index
+        @users = User.all
+        render json: ['its for testing purposes', @users]
     end
 
     # PATCH/PUT /users/1
