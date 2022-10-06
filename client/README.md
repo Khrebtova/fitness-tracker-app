@@ -1,3 +1,12 @@
+# fitness app 
+using 
+1. RapidAPI to feth data:
+- Youtube Search and Download
+- ExerciseDB
+2. MaterialUI for syle
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
