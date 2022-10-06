@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :user_exercises
   resources :days, only: [:index, :show, :create, :update, :destroy]
-  resources :users, only: [:create, :show, :update, :destroy]
+  resources :users
 
   post '/signup', to: 'users#create'
   get '/me', to: 'users#show'
