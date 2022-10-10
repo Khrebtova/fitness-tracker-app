@@ -2,7 +2,7 @@
 using 
 1. RapidAPI to feth data:
 - Youtube Search and Download
-- ExerciseDB
+- ExerciseDB https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb/
 2. MaterialUI for syle
 3. picture : rope training : <a href="https://www.freepik.com/free-photo/portrait-young-spotive-girl-doing-exercises-with-rope-keeping-body-fit-isolated-blue-background-neon_24052827.htm#query=exercise%20room&position=12&from_view=keyword">Image by master1305</a> on Freepik
 
