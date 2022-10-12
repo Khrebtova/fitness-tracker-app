@@ -1,11 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { Stack } from '@mui/material';
+import { Link as RouterLink} from 'react-router-dom'
+import { Stack, Link, Switch } from '@mui/material';
 import Logo from '../assets/images/love-gym.png'
+// import{ BsFillSunFill, BsMoonStarsFill } from 'react-icons/bs';
 
-const Navbar = () => {
+const Navbar = ({isDarkMode, setIsDarkMode}) => {
   return (
-    <Stack 
+    <Stack       
       direction='row'
       justifyContent='space-around'
       px='20px'
@@ -15,17 +16,25 @@ const Navbar = () => {
         justifyContent: 'none'
       }}
     >
-      <Link to="/">
+      <RouterLink to="/">
         <img src={Logo} alt='logo' style={{width: '70px', height: '70px', margin: '0 20px'}}/>
-      </Link>
+      </RouterLink>
       <Stack 
         direction='row'
         gap='40px'
         fontSize='24px'
         alignItems='flex-end'
       >
-        <Link to="/" style={{textDecoration: 'none', color: '#3A1212', borderBottom: '3px solid #FF2625'}}>Home</Link>
-        <a href="#exercises" style={{textDecoration: 'none', color: '#3A1212'}}>Exercises</a>
+        
+        <Link href="/" underline='hover' sx={{color: 'black'}}>Home</Link>
+        <Link href="#exercises" underline='hover' sx={{color: 'black'}}>Exercises</Link>
+        
+        {/* <Stack direction='row' >
+          <BsFillSunFill fontSize='20px' color={isDarkMode ? 'black' : '#ff2625'} />
+          <Switch checked={isDarkMode} size='large' onChange={()=>setIsDarkMode(!isDarkMode)} color='default' />
+          <BsMoonStarsFill fontSize='15px' color={isDarkMode ? '#ff2625' : 'black'}/>
+        </Stack> */}
+        
       </Stack>
     </Stack>
   )
