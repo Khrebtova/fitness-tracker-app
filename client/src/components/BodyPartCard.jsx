@@ -13,16 +13,16 @@ const BodyPartCard = ({item, selectedBodyPart, setSelectedBodyPart}) => {
       sx = {{ 
         backgroundColor: '#fff', 
         borderBottomLeftRadius: '20px', 
-        width: '150px', 
-        height: '150px', 
+        width: '120px', 
+        height: '120px', 
         cursor: 'pointer', 
-        gap: '40px', 
+        gap: '20px', 
         borderTop: selectedBodyPart === item ? '5px solid #ff2625' : 'none' ,
         }}  
       onClick={() => {setSelectedBodyPart(item); window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' })}}
     >
       <RiBodyScanFill color="#FF2625" fontSize='40px'/>
-      <Typography >{item}</Typography>
+      <Typography fontSize='18px' fontWeight='bold' color='#3A1212'>{item.toUpperCase()}</Typography>
     </Stack>
   )
 }

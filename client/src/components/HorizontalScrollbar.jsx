@@ -15,7 +15,7 @@ const HorizontalScrollbar = ({data, selectedBodyPart, setSelectedBodyPart}) => {
     ))
 
     return (                   
-        <Swiper className='bodyPart-swiper' 
+        <Swiper  
             style={{ 
                 '--swiper-navigation-color': '#ff2625', 
                 '--swiper-navigation-size': '30px'     
