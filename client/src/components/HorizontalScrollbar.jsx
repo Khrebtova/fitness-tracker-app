@@ -1,33 +1,39 @@
 import React, { useContext } from 'react'
-import { Box } from '@mui/material';
-import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 import BodyPartCard from './BodyPartCard';
-import {BsFillArrowLeftSquareFill, BsFillArrowRightSquareFill} from 'react-icons/bs';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
-const LeftArrow = () => {
-    const { scrollPrev } = useContext(VisibilityContext);
-    return (            
-        <BsFillArrowLeftSquareFill onClick={()=> scrollPrev()} className='left-arrow'/>            
-    )
-}
-
-const RightArrow = () => {
-    const { scrollNext } = useContext(VisibilityContext);
-    return (
-        <BsFillArrowRightSquareFill onClick={()=> scrollNext()} className="right-arrow"/>
-    )
-}
 
 const HorizontalScrollbar = ({data, selectedBodyPart, setSelectedBodyPart}) => {
 
-    return (
-    <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow} >        
-        {data.map((item) => (
-            <Box key = {item.id || item} itemID = {item.id || item} title = {item.id || item} m = '0 40px'>
-                <BodyPartCard item={item} selectedBodyPart={selectedBodyPart} setSelectedBodyPart={setSelectedBodyPart}/>
-            </Box>
-        ))}        
-    </ScrollMenu>
+    const renderCards = data.map((item) => (
+        <SwiperSlide key = {item.id || item} itemID = {item.id || item} title = {item.id || item} m = '0 40px'>
+            <BodyPartCard item={item} selectedBodyPart={selectedBodyPart} setSelectedBodyPart={setSelectedBodyPart}/>
+        </SwiperSlide>
+    ))
+
+    return (                   
+        <Swiper className='bodyPart-swiper' 
+            style={{ 
+                '--swiper-navigation-color': '#ff2625', 
+                '--swiper-navigation-size': '30px'     
+            }}
+            modules={[Navigation]}                
+            navigation            
+            breakpoints= {{
+                // when window width is >= 320px
+                320: {slidesPerView: 2},
+                // when window width is >= 480px
+                480: {  slidesPerView: 4},
+                // when window width is >= 640px
+                1200: { slidesPerView: 6 }
+              }}               
+        >
+            {renderCards}
+        </Swiper>                   
+        
   )
 }
 
