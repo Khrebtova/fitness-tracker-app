@@ -7,13 +7,13 @@ const SearchExercises = ({selectedBodyPart, setSelectedBodyPart, setExercises}) 
   const [search, setSearch] = useState('')  
   const [bodyPartList, setBodyPartList] = useState([])  
   
-  useEffect(() => {
-    const fetchBodyParts = async () => {
-      const data = await fetchData(exerciseURL+'/bodyPartList', exerciseOptions);
-      setBodyPartList(['all', ...data]);
-    }
-    fetchBodyParts();
-  }, [])
+  // useEffect(() => {
+  //   const fetchBodyParts = async () => {
+  //     const data = await fetchData(exerciseURL+'/bodyPartList', exerciseOptions);
+  //     setBodyPartList(['all', ...data]);
+  //   }
+  //   fetchBodyParts();
+  // }, [])
 
   const handleSearch = async (e) => {
     if(search){

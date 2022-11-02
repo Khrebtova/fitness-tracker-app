@@ -19,7 +19,10 @@ const BodyPartCard = ({item, selectedBodyPart, setSelectedBodyPart}) => {
         gap: '20px', 
         borderTop: selectedBodyPart === item ? '5px solid #ff2625' : 'none' ,
         }}  
-      onClick={() => {setSelectedBodyPart(item); window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' })}}
+      onClick={() => {
+        setSelectedBodyPart(item); 
+        window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' })
+      }}
     >
       <RiBodyScanFill color="#FF2625" fontSize='40px'/>
       <Typography fontSize='18px' fontWeight='bold' color='#3A1212'>{item.toUpperCase()}</Typography>
