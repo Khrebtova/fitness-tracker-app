@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import HeroBanner from '../components/HeroBanner';
 import SearchExercises from '../components/SearchExercises';
 import Exercises from '../components/Exercises';
+import Footer from '../components/Footer';
 
 const Home = () => {
   const [exercises, setExercises] = useState([])
@@ -16,11 +17,11 @@ const Home = () => {
         setSelectedBodyPart={setSelectedBodyPart} 
         setExercises={setExercises}
         />
-      <Exercises 
+      {/* <Exercises 
         selectedBodyPart={selectedBodyPart}        
         setExercises={setExercises} 
         exercises={exercises}
-      />
+      /> */}
     </Box>
   )
 }
